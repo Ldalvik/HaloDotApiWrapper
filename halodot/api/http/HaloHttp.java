@@ -10,16 +10,16 @@ import java.net.URL;
 public class HaloHttp {
 
     public static String get(String url, String payload, String token) throws IOException {
-        URL obj = new URL(url);
+        URL obj = new URL(url+payload);
         HttpURLConnection httpURLConnection = (HttpURLConnection) obj.openConnection();
-        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setRequestMethod("GET");
         httpURLConnection.setDoOutput(true);
         httpURLConnection.setRequestProperty("content-type", "application/json");
         httpURLConnection.setRequestProperty("authorization", token);
-        OutputStream os = httpURLConnection.getOutputStream();
+        /*OutputStream os = httpURLConnection.getOutputStream();
         os.write(payload.getBytes());
         os.flush();
-        os.close();
+        os.close();*/
 
         int responseCode = httpURLConnection.getResponseCode();
         System.out.println("Response Code :: " + responseCode);

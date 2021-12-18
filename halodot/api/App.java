@@ -1,21 +1,42 @@
 package halodot.api;
 
-import halodot.api.HaloApi.Appearance;
-import halodot.api.HaloApi.Articles;
 import halodot.api.HaloApi.HaloApi;
-import halodot.api.HaloApi.stats.CSRS;
 import halodot.api.HaloApi.stats.Stats;
+
+import java.math.BigDecimal;
 
 public class App 
 {
 
-    static String TOKEN ="tok_dev_sQ5pZPkjLoXc59s116bNZaeF8VmRZnH3mUCLVjNdVj9NL978WbQfa4Xm9DfxYrQf";
-    static String VERSION ="0.2.0";
+    static String TOKEN ="tok_dev_VBdFk6cASRbsUrwne5mPJAXxMxGcvghisTi3nnSxSSFFZiHuzcMGkx8JzGRY3rSJ";
+    static String VERSION ="0.2.1";
     public static void main( String[] args )
     {
         HaloApi api = new HaloApi(VERSION, TOKEN);
-        Stats stats = api.getStats("hey root");
+        Stats stats = api.getStats("hey%20root");
+
+        long matches_played = stats.getServiceRecord().getMatchesPlayed();
+        BigDecimal win_rate = stats.getServiceRecord().getWinRate();
+
+        long matches_played_btb = stats.getServiceRecord(HaloApi.BTB).getMatchesPlayed();
+        BigDecimal win_rate_btb = stats.getServiceRecord(HaloApi.BTB).getWinRate();
+
+        long matches_played_ranked = stats.getServiceRecord(HaloApi.ARENA, HaloApi.RANKED_ALL).getMatchesPlayed();
+        BigDecimal win_rate_ranked = stats.getServiceRecord(HaloApi.ARENA, HaloApi.RANKED_ALL).getWinRate();
+
+        System.out.println("Matches played: " + matches_played);
+        System.out.println("Win rate: " + win_rate);
+
+        System.out.println("BTB Matches played: " + matches_played_btb);
+        System.out.println("BTB Win rate: " + win_rate_btb);
+
+        System.out.println("RANKED Matches played: " + matches_played_ranked);
+        System.out.println("RANKED Win rate: " + win_rate_ranked);
+
+
+        /*
         CSRS csrs = stats.getCSRS(1);
+
 
         long count = csrs.getCount();
         System.out.println("JSON data: " + csrs);
@@ -35,6 +56,8 @@ public class App
             System.out.println("Value (Rank): " + value);
             i++;
         }
+        */
+
         /* Articles articles = api.getArticles(HaloApi.EN_US);
 
         long count = articles.getCount();
