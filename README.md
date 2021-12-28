@@ -6,9 +6,13 @@ Halo Infinite API wrapper for HaloDotApi endpoints. This library enables easy sy
     -APPEARANCE ✔️
 ### /STATS/
     -CSRS ✔️
-    -SERVICE RECORD
+### SERVICE RECORD
+    -MULTIPLAYER ✔️
+    -CAMPAIGN
 ### /MATCHES/
     -LIST
     -RETRIEVE
 ### /UGC/
     -SEARCH
+### /METADATA/
+    -MEDALS
