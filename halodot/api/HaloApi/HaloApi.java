@@ -14,16 +14,6 @@ public class HaloApi {
     public static String AUTH_TOKEN;
     public static String VERSION;
 
-    public static String BTB = "btb";
-    public static String PVE_BOTS = "pve-bots";
-    public static String ARENA ="arena";
-    public static String FEATURED = "featured";
-    public static String CUSTOM ="custom";
-    public static String RANKED_ALL ="ranked:all";
-    public static String RANKED_OPEN_CROSSPLAY ="ranked:open:crossplay";
-    public static String RANKED_SOLODUO_CONTROLLER ="ranked:solo-duo:controller";
-    public static String RANKED_SOLODUO_MNK ="ranked:solo-duo:mnk";
-
     public static String EN_US = "en-US";
 
     public HaloApi(String version, String auth_token){
