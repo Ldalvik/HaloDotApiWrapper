@@ -1,5 +1,6 @@
 package halodot.api.HaloApi.stats.ServiceRecord;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -34,6 +35,19 @@ public class Multiplayer {
         return new BigDecimal(String.valueOf(data.get("win_rate")));
     }
 
+
+    //TIME PLAYED//
+    private JSONObject getTimePlayed() {
+        return (JSONObject) data.get("time_played");
+    }
+
+    public long getTimePlayedSeconds(){
+        return (long) getTimePlayed().get("seconds");
+    }
+
+    public String getTimePlayedHuman(){
+        return (String) getTimePlayed().get("human");
+    }
 
     //CORE//
     private JSONObject getCore() {
@@ -205,5 +219,9 @@ public class Multiplayer {
 
     //TO DO MEDALS//
 
+    public long getMedalsCount(){
+        JSONArray arr = (JSONArray) getBreakdown().get("medals");
+        return arr.size();
+    }
 
 }

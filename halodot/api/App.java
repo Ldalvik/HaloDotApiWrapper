@@ -22,7 +22,7 @@ public class App
 
 
         /*
-        
+
         CSRS csrs = stats.getCSRS(1);
 
         long count = csrs.getCount();
@@ -101,6 +101,9 @@ public class App
 
         Multiplayer multiplayer =  stats.getServiceRecord().getMultiplayer(GAMETYPE_FILTER);
 
+        long       pvp_time_played_seconds  = multiplayer.getTimePlayedSeconds();
+        String     pvp_time_played_human    = multiplayer.getTimePlayedHuman();
+
         long       pvp_matches_played       = multiplayer.getMatchesPlayed();
         BigDecimal pvp_win_rate             = multiplayer.getWinRate();
 
@@ -141,41 +144,52 @@ public class App
         long       pvp_matches_left         = multiplayer.getMatchesLeft();
         long       pvp_matches_draw         = multiplayer.getMatchesDraw();
 
+        long       pvp_medals_count         = multiplayer.getMedalsCount();
 
+        System.out.println("pvp_time_played_seconds " + pvp_time_played_seconds);
+        System.out.println("pvp_time_played_human   " + pvp_time_played_human);
 
+        System.out.println("pvp_matches_played      " + pvp_matches_played);
+        System.out.println("pvp_win_rate            " + pvp_win_rate);
 
-        System.out.println("pvp_matches_played     " + pvp_matches_played);
-        System.out.println("pvp_win_rate           " + pvp_win_rate);
-        System.out.println("pvp_kda                " + pvp_kda);
-        System.out.println("pvp_kdr                " + pvp_kdr);
-        System.out.println("pvp_total_score        " + pvp_total_score);
-        System.out.println("pvp_kills              " + pvp_kills);
-        System.out.println("pvp_deaths             " + pvp_deaths);
-        System.out.println("pvp_assists            " + pvp_assists);
-        System.out.println("pvp_betrayals          " + pvp_betrayals);
-        System.out.println("pvp_suicides           " + pvp_suicides);
-        System.out.println("pvp_medals             " + pvp_medals);
-        System.out.println("pvp_vehicles_destroyed " + pvp_vehicles_destroyed);
-        System.out.println("pvp_vehicles_hijacked  " + pvp_vehicles_hijacked);
-        System.out.println("pvp_damage_taken       " + pvp_damage_taken);
-        System.out.println("pvp_damage_dealt       " + pvp_damage_dealt);
-        System.out.println("pvp_damage_average     " + pvp_damage_average);
-        System.out.println("pvp_shots_fired        " + pvp_shots_fired);
-        System.out.println("pvp_shots_landed       " + pvp_shots_landed);
-        System.out.println("pvp_shots_missed       " + pvp_shots_missed);
-        System.out.println("pvp_shots_accuracy     " + pvp_shots_accuracy);
-        System.out.println("pvp_melee_kills        " + pvp_melee_kills);
-        System.out.println("pvp_grenade_kills      " + pvp_grenade_kills);
-        System.out.println("pvp_headshot_kills     " + pvp_headshot_kills);
-        System.out.println("pvp_powerweapon_kills  " + pvp_powerweapon_kills);
-        System.out.println("pvp_emp_assists        " + pvp_emp_assists);
-        System.out.println("pvp_driver_assists     " + pvp_driver_assists);
-        System.out.println("pvp_callout_assists    " + pvp_callout_assists);
-        System.out.println("pvp_matches_won        " + pvp_matches_won);
-        System.out.println("pvp_matches_lost       " + pvp_matches_lost);
-        System.out.println("pvp_matches_left       " + pvp_matches_left);
-        System.out.println("pvp_matches_draw       " + pvp_matches_draw);
+        System.out.println("pvp_kda                 " + pvp_kda);
+        System.out.println("pvp_kdr                 " + pvp_kdr);
+        System.out.println("pvp_total_score         " + pvp_total_score);
 
+        System.out.println("pvp_kills               " + pvp_kills);
+        System.out.println("pvp_deaths              " + pvp_deaths);
+        System.out.println("pvp_assists             " + pvp_assists);
+        System.out.println("pvp_betrayals           " + pvp_betrayals);
+        System.out.println("pvp_suicides            " + pvp_suicides);
+        System.out.println("pvp_medals              " + pvp_medals);
+
+        System.out.println("pvp_vehicles_destroyed  " + pvp_vehicles_destroyed);
+        System.out.println("pvp_vehicles_hijacked   " + pvp_vehicles_hijacked);
+
+        System.out.println("pvp_damage_taken        " + pvp_damage_taken);
+        System.out.println("pvp_damage_dealt        " + pvp_damage_dealt);
+        System.out.println("pvp_damage_average      " + pvp_damage_average);
+
+        System.out.println("pvp_shots_fired         " + pvp_shots_fired);
+        System.out.println("pvp_shots_landed        " + pvp_shots_landed);
+        System.out.println("pvp_shots_missed        " + pvp_shots_missed);
+        System.out.println("pvp_shots_accuracy      " + pvp_shots_accuracy);
+
+        System.out.println("pvp_melee_kills         " + pvp_melee_kills);
+        System.out.println("pvp_grenade_kills       " + pvp_grenade_kills);
+        System.out.println("pvp_headshot_kills      " + pvp_headshot_kills);
+        System.out.println("pvp_powerweapon_kills   " + pvp_powerweapon_kills);
+
+        System.out.println("pvp_emp_assists         " + pvp_emp_assists);
+        System.out.println("pvp_driver_assists      " + pvp_driver_assists);
+        System.out.println("pvp_callout_assists     " + pvp_callout_assists);
+
+        System.out.println("pvp_matches_won         " + pvp_matches_won);
+        System.out.println("pvp_matches_lost        " + pvp_matches_lost);
+        System.out.println("pvp_matches_left        " + pvp_matches_left);
+        System.out.println("pvp_matches_draw        " + pvp_matches_draw);
+
+        System.out.println("pvp_medals_count        " + pvp_medals_count);
 
 
         Articles articles = api.getArticles(HaloApi.EN_US);
