@@ -16,7 +16,7 @@ public class Stats {
     public CSRS getCSRS(int season){
         String data = null;
         try {
-            data = HaloHttp.get("https://halo.api.stdlib.com/infinite@" + HaloApi.VERSION + "/stats/csrs/","?gamertag=" + gamertag + "&season=" + season, HaloApi.AUTH_TOKEN);
+            data = HaloHttp.get("https://halo.api.stdlib.com/infinite@" + HaloApi.VERSION + "/stats/csrs","?gamertag=" + gamertag + "&season=" + season, HaloApi.AUTH_TOKEN);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -8,6 +8,12 @@ import java.math.BigDecimal;
 public class Multiplayer {
     JSONObject data;
 
+    public static String MATCHMADE_PVP = "matchmade:pvp";
+    public static String MATCHMADE_SOCIAL = "matchmade:social";
+    public static String MATCHMADE_RANKED = "matchmade:ranked";
+    public static String MATCHMADE_BOTS = "matchmade:bots";
+    public static String CUSTOM = "matchmade:custom";
+
     public Multiplayer(String data) {
         JSONObject obj = null;
         try {

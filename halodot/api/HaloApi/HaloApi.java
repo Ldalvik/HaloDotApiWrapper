@@ -35,7 +35,7 @@ public class HaloApi {
     public Articles getArticles(String language) {
         String data = null;
         try {
-            data = HaloHttp.get("https://halo.api.stdlib.com/infinite@" + VERSION + "/articles/","?language=" + language, AUTH_TOKEN);
+            data = HaloHttp.get("https://halo.api.stdlib.com/infinite@" + VERSION + "/articles/list/","?language=" + language, AUTH_TOKEN);
         } catch (IOException e) {
             e.printStackTrace();
         }

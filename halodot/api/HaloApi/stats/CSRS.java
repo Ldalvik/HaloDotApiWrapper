@@ -28,6 +28,14 @@ public class CSRS {
         return data.size();
     }
 
+    public String getQueue(int count){
+        return Utils.getObjStr(data, count,"queue");
+    }
+
+    public String getInput(int count){
+        return Utils.getObjStr(data, count,"input");
+    }
+
 
     //CURRENT//
     private JSONObject getCurrent(int count){
@@ -48,24 +56,24 @@ public class CSRS {
         return (String) getCurrent(count).get("tier");
     }
 
-    public String getCurrentTierStart(int count){
-        return (String) getCurrent(count).get("tier_start");
+    public long getCurrentTierStart(int count){
+        return (long) getCurrent(count).get("tier_start");
     }
 
-    public String getCurrentSubTier(int count){
-        return (String) getCurrent(count).get("sub_tier");
+    public long getCurrentSubTier(int count){
+        return (long) getCurrent(count).get("sub_tier");
     }
 
-    public String getCurrentNextTierStart(int count){
-        return (String) getCurrent(count).get("next_tier_start");
+    public long getCurrentNextTierStart(int count){
+        return (long) getCurrent(count).get("next_tier_start");
     }
 
-    public String getCurrentNextSubTier(int count){
-        return (String) getCurrent(count).get("next_sub_tier");
+    public long getCurrentNextSubTier(int count){
+        return (long) getCurrent(count).get("next_sub_tier");
     }
 
-    public String getCurrentInitialMeasurementMatches(int count){
-        return (String) getCurrent(count).get("initial_measurement_matches");
+    public long getCurrentInitialMeasurementMatches(int count){
+        return (long) getCurrent(count).get("initial_measurement_matches");
     }
 
     public String getCurrentTierImageUrl(int count){
@@ -92,31 +100,29 @@ public class CSRS {
         return (String) getSeason(count).get("tier");
     }
 
-    public String getSeasonTierStart(int count){
-        return (String) getSeason(count).get("tier_start");
+    public long getSeasonTierStart(int count){
+        return (long) getSeason(count).get("tier_start");
     }
 
-    public String getSeasonSubTier(int count){
-        return (String) getSeason(count).get("sub_tier");
+    public long getSeasonSubTier(int count){
+        return (long) getSeason(count).get("sub_tier");
     }
 
-    public String getSeasonNextTierStart(int count){
-        return (String) getSeason(count).get("next_tier_start");
+    public long getSeasonNextTierStart(int count){
+        return (long) getSeason(count).get("next_tier_start");
     }
 
-    public String getSeasonNextSubTier(int count){
-        return (String) getSeason(count).get("next_sub_tier");
+    public long getSeasonNextSubTier(int count){
+        return (long) getSeason(count).get("next_sub_tier");
     }
 
-    public String getSeasonInitialMeasurementMatches(int count){
-        return (String) getSeason(count).get("initial_measurement_matches");
+    public long getSeasonInitialMeasurementMatches(int count){
+        return (long) getSeason(count).get("initial_measurement_matches");
     }
 
     public String getSeasonTierImageUrl(int count){
         return (String) getSeason(count).get("tier_image_url");
     }
-
-
 
     //ALL-TIME//
     private JSONObject getAllTime(int count){
@@ -125,53 +131,42 @@ public class CSRS {
         return (JSONObject) obj2.get("all_time");
     }
 
-    public long getAllTimeSeasonValue(int count){
+    public long getAllTimeValue(int count){
         return (long) getAllTime(count).get("value");
     }
 
-    public long getAllTimeSeasonMatchesRemaining(int count){
+    public long getAllTimeMatchesRemaining(int count){
         return (long) getAllTime(count).get("measurement_matches_remaining");
     }
 
-    public String getAllTimeSeasonTier(int count){
+    public String getAllTimeTier(int count){
         return (String) getAllTime(count).get("tier");
     }
 
-    public String getAllTimeSeasonTierStart(int count){
-        return (String) getAllTime(count).get("tier_start");
+    public long getAllTimeTierStart(int count){
+        return (long) getAllTime(count).get("tier_start");
     }
 
-    public String getAllTimeSeasonSubTier(int count){
-        return (String) getAllTime(count).get("sub_tier");
+    public long getAllTimeSubTier(int count){
+        return (long) getAllTime(count).get("sub_tier");
     }
 
-    public String getAllTimeSeasonNextTierStart(int count){
-        return (String) getAllTime(count).get("next_tier_start");
+    public long getAllTimeNextTierStart(int count){
+        return (long) getAllTime(count).get("next_tier_start");
     }
 
-    public String getAllTimeSeasonNextSubTier(int count){
-        return (String) getAllTime(count).get("next_sub_tier");
+    public long getAllTimeNextSubTier(int count){
+        return (long) getAllTime(count).get("next_sub_tier");
     }
 
-    public String getAllTimeSeasonInitialMeasurementMatches(int count){
-        return (String) getAllTime(count).get("initial_measurement_matches");
+    public long getAllTimeInitialMeasurementMatches(int count){
+        return (long) getAllTime(count).get("initial_measurement_matches");
     }
 
-    public String getAllTimeSeasonTierImageUrl(int count){
+    public String getAllTimeTierImageUrl(int count){
         return (String) getAllTime(count).get("tier_image_url");
     }
 
-
-
-
-
-    public String getQueue(int count){
-        return Utils.getObjStr(data, count,"queue");
-    }
-
-    public String getInput(int count){
-        return Utils.getObjStr(data, count,"input");
-    }
 
     @Override
     public String toString(){
