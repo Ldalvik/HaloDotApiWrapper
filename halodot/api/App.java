@@ -2,6 +2,7 @@ package halodot.api;
 
 import halodot.api.HaloApi.HaloApi;
 import halodot.api.HaloApi.stats.CSRS;
+import halodot.api.HaloApi.stats.ServiceRecord.Campaign;
 import halodot.api.HaloApi.stats.ServiceRecord.Multiplayer;
 import halodot.api.HaloApi.stats.Stats;
 
@@ -12,13 +13,37 @@ public class App
 
     static String TOKEN ="tok_dev_Ambv9VSB1nSn2gt4dz2Pj2xfjseSswG2KfYNcp68qBiKfRM8fLptGrkg6hirq2Tg";
     static String VERSION ="0.3.3";
-    public static void main( String[] args )
-    {
+
+    public static void main( String[] args ){
+
         HaloApi api = new HaloApi(VERSION, TOKEN);
         Stats stats = api.getStats("hey%20root");
 
+        Campaign campaign = stats.getServiceRecord().getCampaign();
 
+        long    skulls_found                 = campaign.getSkullsFound();
+        long    fobs_secured                 = campaign.getFobsSecured();
+        long    spartan_cores_found          = campaign.getSpartanCoresFound();
+        long    propaganda_towers_destroyed  = campaign.getPropagandaTowersDestroyed();
+        long    missions_completed           = campaign.getMissionsCompleted();
+        long    unsc_audio_logs_found        = campaign.getUNSCAudioLogsFound();
+        long    spartan_audio_logs_found     = campaign.getSpartanAudioLogsFound();
+        long    banished_audio_logs_found    = campaign.getBanishedAudioLogsFound();
+        String  highest_difficulty_completed = campaign.getHighestDifficultyCompleted();
+        String  highest_difficulty_image_url = campaign.getHighestDifficultyImageURL();
+        boolean laso_completed               = campaign.getLasoCompleted();
 
+        System.out.println("skulls_found                 " + skulls_found);
+        System.out.println("fobs_secured                 " + fobs_secured);
+        System.out.println("spartan_cores_found          " + spartan_cores_found);
+        System.out.println("propaganda_towers_destroyed  " + propaganda_towers_destroyed);
+        System.out.println("missions_completed           " + missions_completed);
+        System.out.println("unsc_audio_logs_found        " + unsc_audio_logs_found);
+        System.out.println("spartan_audio_logs_found     " + spartan_audio_logs_found);
+        System.out.println("banished_audio_logs_found    " + banished_audio_logs_found);
+        System.out.println("highest_difficulty_completed " + highest_difficulty_completed);
+        System.out.println("highest_difficulty_image_url " + highest_difficulty_image_url);
+        System.out.println("laso_completed               " + laso_completed);
 
 
         /*

@@ -27,7 +27,7 @@ public class ServiceRecord {
         return new Multiplayer(data);
     }
 
-    public Campaign getMultiplayer(){
+    public Campaign getCampaign(){
         String data = null;
         try {
             data = HaloHttp.get("https://halo.api.stdlib.com/infinite@" + HaloApi.VERSION + "/stats/service-record/campaign","?gamertag=" + gamertag, HaloApi.AUTH_TOKEN);
